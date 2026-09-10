@@ -1,0 +1,243 @@
+{
+  "name": "OpsLens - Refund Ticket Triage",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "new-ticket",
+        "responseMode": "lastNode",
+        "options": {}
+      },
+      "id": "a1b2c3d4-0001-4000-8000-000000000001",
+      "name": "New Ticket",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [-620, 300],
+      "webhookId": "opslens-new-ticket"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Build the LLM request. Kept in its own node so the prompt is\n// readable and version-controlled rather than buried in a URL field.\n\nconst ticket = $input.first().json.body || $input.first().json;\n\nconst SYSTEM_PROMPT = [\n  'You classify customer support tickets for a product team.',\n  '',\n  'Return ONLY a JSON object, no prose, no markdown fences:',\n  '{',\n  '  \"theme\": \"no_status_visibility | timeline_not_met | no_response_from_support | money_not_received | amount_incorrect | other\",',\n  '  \"severity\": \"low | medium | high\",',\n  '  \"self_service_gap\": true or false',\n  '}',\n  '',\n  'self_service_gap is true when the customer contacted support only to obtain',\n  'information the product should have displayed.',\n  'If the complaint is about not being told, use no_status_visibility even when',\n  'money is mentioned.'\n].join('\\n');\n\nreturn [{\n  json: {\n    ticket_id: ticket.ticket_id || 'unknown',\n    issue_type: ticket.issue_type || 'unknown',\n    priority: ticket.priority || 'P3',\n    customer_text: ticket.customer_text || '',\n    llm_payload: {\n      model: 'openai/gpt-oss-120b',\n      temperature: 0,\n      max_tokens: 800,\n      messages: [\n        { role: 'system', content: SYSTEM_PROMPT },\n        { role: 'user', content: ticket.customer_text || '' }\n      ]\n    }\n  }\n}];"
+      },
+      "id": "a1b2c3d4-0002-4000-8000-000000000002",
+      "name": "Build LLM Request",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [-400, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.groq.com/openai/v1/chat/completions",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($json.llm_payload) }}",
+        "options": {
+          "timeout": 20000,
+          "response": {
+            "response": {
+              "neverError": true
+            }
+          }
+        }
+      },
+      "id": "a1b2c3d4-0003-4000-8000-000000000003",
+      "name": "Classify (LLM)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [-180, 300],
+      "alwaysOutputData": true,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "jsCode": "// DETERMINISTIC BUSINESS RULES\n//\n// The LLM interprets language. It does NOT decide escalation.\n// Escalation must be auditable and identical every time, so it lives here\n// as explicit rules a human can read and a compliance team can sign off.\n\nconst upstream = $('Build LLM Request').first().json;\nconst response = $input.first().json;\n\n// ---- parse the model output, tolerantly -------------------------------\nlet ai = null;\nlet aiError = null;\n\ntry {\n  const raw = response.choices[0].message.content || '';\n  const cleaned = raw.replace(/```json/g, '').replace(/```/g, '').trim();\n  ai = JSON.parse(cleaned);\n} catch (e) {\n  aiError = 'unparseable_or_missing_response';\n}\n\n// ---- rules ------------------------------------------------------------\nconst HIGH_RISK_ISSUES = ['payment_failed', 'double_charge', 'delivery_lost'];\n\nlet action;\nlet reason;\n\nif (ai === null) {\n  // FAIL SAFE: if the AI is unavailable, a human handles it.\n  // Never auto-respond on a guess.\n  action = 'escalate';\n  reason = 'ai_unavailable_fail_safe';\n\n} else if (upstream.priority === 'P1' || HIGH_RISK_ISSUES.includes(upstream.issue_type)) {\n  action = 'escalate';\n  reason = 'high_risk_rule';\n\n} else if (ai.theme === 'amount_incorrect') {\n  action = 'escalate';\n  reason = 'money_may_be_wrong';\n\n} else if (ai.self_service_gap === true) {\n  action = 'auto_respond';\n  reason = 'information_request_only';\n\n} else {\n  action = 'escalate';\n  reason = 'default_to_human';\n}\n\n// ---- structured log line ---------------------------------------------\nreturn [{\n  json: {\n    ticket_id: upstream.ticket_id,\n    issue_type: upstream.issue_type,\n    priority: upstream.priority,\n    ai_theme: ai ? ai.theme : null,\n    ai_severity: ai ? ai.severity : null,\n    ai_self_service_gap: ai ? ai.self_service_gap : null,\n    ai_error: aiError,\n    action: action,\n    reason: reason,\n    decided_at: new Date().toISOString()\n  }\n}];"
+      },
+      "id": "a1b2c3d4-0004-4000-8000-000000000004",
+      "name": "Business Rules",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [40, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "cond-escalate",
+              "leftValue": "={{ $json.action }}",
+              "rightValue": "escalate",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "looseTypeValidation": true,
+        "options": {}
+      },
+      "id": "a1b2c3d4-0005-4000-8000-000000000005",
+      "name": "Needs a human?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [260, 300]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "esc-1",
+              "name": "outcome",
+              "value": "escalated_to_agent",
+              "type": "string"
+            },
+            {
+              "id": "esc-2",
+              "name": "queue",
+              "value": "refunds_priority",
+              "type": "string"
+            },
+            {
+              "id": "esc-3",
+              "name": "ticket_id",
+              "value": "={{ $json.ticket_id }}",
+              "type": "string"
+            },
+            {
+              "id": "esc-4",
+              "name": "reason",
+              "value": "={{ $json.reason }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "a1b2c3d4-0006-4000-8000-000000000006",
+      "name": "Escalate to Agent",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [480, 200]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "auto-1",
+              "name": "outcome",
+              "value": "auto_responded_with_status",
+              "type": "string"
+            },
+            {
+              "id": "auto-2",
+              "name": "message",
+              "value": "Your refund is being processed. Expected arrival: [status_service.eta]. You can track it here: [status_url]",
+              "type": "string"
+            },
+            {
+              "id": "auto-3",
+              "name": "ticket_id",
+              "value": "={{ $json.ticket_id }}",
+              "type": "string"
+            },
+            {
+              "id": "auto-4",
+              "name": "reason",
+              "value": "={{ $json.reason }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "a1b2c3d4-0007-4000-8000-000000000007",
+      "name": "Auto-Respond with Status",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [480, 400]
+    }
+  ],
+  "connections": {
+    "New Ticket": {
+      "main": [
+        [
+          {
+            "node": "Build LLM Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build LLM Request": {
+      "main": [
+        [
+          {
+            "node": "Classify (LLM)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Classify (LLM)": {
+      "main": [
+        [
+          {
+            "node": "Business Rules",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Business Rules": {
+      "main": [
+        [
+          {
+            "node": "Needs a human?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Needs a human?": {
+      "main": [
+        [
+          {
+            "node": "Escalate to Agent",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Auto-Respond with Status",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "pinData": {},
+  "meta": {
+    "instanceId": "opslens"
+  }
+}

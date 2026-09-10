@@ -1,0 +1,201 @@
+theme,pain_point,severity,root_cause_hypothesis,self_service_gap,ticket_id,issue_type,period
+money_not_received,cannot access expected funds,high,internal payout processing delay causing credit hold,True,TCK-127421,refund_not_received,post
+money_not_received,cannot receive expected refund,high,refund processing delay due to payment gateway backlog,True,TCK-123757,refund_not_received,post
+timeline_not_met,cannot get refund within promised time,high,refund processing batch delayed,True,TCK-123911,refund_not_received,post
+money_not_received,Cannot receive expected refund,high,Payments backend delay causing refund not processed,True,TCK-131884,refund_not_received,post
+money_not_received,cannot access credited funds,high,delayed processing in payout system,True,TCK-122800,refund_not_received,post
+money_not_received,cannot receive refund,high,refund processing delayed by backend batch job,True,TCK-129791,refund_not_received,post
+money_not_received,Cannot get refund for order,high,Refund processing delay due to manual review,True,TCK-121843,refund_not_received,post
+money_not_received,cannot receive expected refund,high,refund processing delay in payment system,True,TCK-126760,refund_not_received,post
+money_not_received,cannot receive refunded money,high,refund processing delay or payment gateway integration issue,False,TCK-119647,refund_not_received,post
+money_not_received,cannot see refund after return,high,refund processing delay in payment backend,True,TCK-122947,refund_not_received,post
+timeline_not_met,cannot receive refund within promised timeframe,high,refund delayed by manual verification process,True,TCK-128270,refund_not_received,post
+money_not_received,cannot receive expected refund,high,refund processing delay in payment system,True,TCK-119374,refund_not_received,post
+money_not_received,cannot access credited funds,high,delayed processing in payouts system,True,TCK-121883,refund_not_received,post
+money_not_received,cannot see refunded money in account,high,payment processor delay or missing payout trigger,True,TCK-134131,refund_not_received,post
+timeline_not_met,cannot receive refund,high,payments system delay causing refund processing lag,True,TCK-128389,refund_not_received,post
+timeline_not_met,cannot confirm refund has been received,high,refund batch processing delayed beyond expected window,True,TCK-123255,refund_not_received,post
+money_not_received,cannot receive expected refund,high,Refund processing delayed by backend batch job,True,TCK-118825,refund_not_received,post
+timeline_not_met,cannot get refund within promised time,high,refund batch delayed due to manual review,True,TCK-129310,refund_not_received,post
+money_not_received,cannot access expected funds,high,delayed payout processing or missing transaction,True,TCK-131309,refund_not_received,post
+money_not_received,cannot access credited funds,high,delayed processing in payments system,True,TCK-132089,refund_not_received,post
+money_not_received,cannot access credited funds,high,internal payout processing delay causing credit hold,True,TCK-130042,refund_not_received,post
+money_not_received,cannot see or receive expected refund,high,refund processing delay in payment backend,True,TCK-120049,refund_not_received,post
+money_not_received,cannot see credited funds,high,internal payout delay and missing status updates,True,TCK-130687,refund_not_received,post
+money_not_received,cannot receive refunded money,high,refund processing delay or payment gateway integration issue,False,TCK-123768,refund_not_received,post
+money_not_received,cannot access credited funds,high,delayed processing in payout system,True,TCK-133143,refund_not_received,post
+money_not_received,cannot receive expected refund,high,refund processing delay in payment system,True,TCK-118720,refund_not_received,post
+no_response_from_support,cannot find out when refund will be received,high,support tickets not being escalated to refunds team promptly,True,TCK-122028,refund_not_received,post
+money_not_received,Cannot get refund for order,high,Refund pending due to manual processing delay,True,TCK-122432,refund_not_received,post
+money_not_received,cannot receive expected refund,high,refund processing delay or status not displayed,True,TCK-126308,refund_not_received,post
+timeline_not_met,cannot verify refund has been processed,medium,refund batch delayed by backend processing backlog,True,TCK-119415,refund_not_received,post
+money_not_received,cannot receive expected refund,high,refund processing delay in payment system,True,TCK-127716,refund_not_received,post
+timeline_not_met,cannot receive refund promptly,high,refund processing delayed by manual review,True,TCK-119971,refund_not_received,post
+money_not_received,cannot see or receive expected refund,high,payment processor delay causing pending refund,True,TCK-129067,refund_not_received,post
+money_not_received,cannot receive refund for returned order,high,refund pending due to delayed processing or manual review,True,TCK-120953,refund_not_received,post
+money_not_received,cannot receive expected refund,high,refund processing delay in payment system,True,TCK-126841,refund_not_received,post
+money_not_received,cannot receive refunded money,high,refund processing delay or payment provider integration issue,False,TCK-130467,refund_not_received,post
+money_not_received,cannot receive refund,high,refund processing delay in payment system,True,TCK-131381,refund_not_received,post
+money_not_received,cannot access credited funds,high,delayed processing or payout system bug,True,TCK-119264,refund_not_received,post
+money_not_received,cannot access expected funds,high,delayed payout processing or settlement backlog,True,TCK-120964,refund_not_received,post
+timeline_not_met,cannot receive refund within promised timeframe,high,Refund processing delayed by manual review backlog,True,TCK-124735,refund_not_received,post
+money_not_received,cannot receive approved refund,high,payment processor delay or bank transfer failure,True,TCK-127444,refund_not_received,post
+timeline_not_met,cannot verify refund has been processed,high,"backend refund batch delayed, status not updated promptly",True,TCK-118962,refund_not_received,post
+money_not_received,cannot receive expected refund,high,refund processing delay in payment system,True,TCK-129070,refund_not_received,post
+money_not_received,cannot receive refund for returned order,high,refund batch processing delayed or not triggered,True,TCK-129499,refund_not_received,post
+money_not_received,cannot receive refund,high,"refund status not displayed, causing processing delays",True,TCK-120757,refund_not_received,post
+money_not_received,cannot receive refund,high,refund status not updated in system,True,TCK-133888,refund_not_received,post
+money_not_received,cannot get refund for returned order,high,backend refund processing lag causing delayed credit to customer,True,TCK-125915,refund_not_received,post
+money_not_received,cannot receive expected refund,medium,refund pending due to manual processing delay,True,TCK-120338,refund_not_received,post
+money_not_received,cannot receive expected refund,medium,refund pending due to manual processing delay,True,TCK-131988,refund_not_received,post
+money_not_received,cannot receive refunded money,high,delay in payment processor settlement causing refund not posted,True,TCK-125431,refund_not_received,post
+timeline_not_met,cannot get refund within promised timeframe,high,refund processing batch delayed in backend,True,TCK-112979,refund_not_received,pre
+timeline_not_met,Cannot receive expected refund,high,Refund processing batch delayed due to system backlog,False,TCK-117893,refund_not_received,pre
+money_not_received,cannot access credited funds,high,delayed processing in payout system,True,TCK-110395,refund_not_received,pre
+money_not_received,cannot receive refunded money,high,refund processing delay or payment provider integration issue,False,TCK-111129,refund_not_received,pre
+money_not_received,cannot see refunded money in account,high,payment processor delay causing refund not posted,False,TCK-107210,refund_not_received,pre
+money_not_received,cannot see when refund will be received,high,refund status not updated in system,True,TCK-117216,refund_not_received,pre
+money_not_received,cannot receive approved refund,high,refund processing delay or payment provider integration issue,False,TCK-112488,refund_not_received,pre
+money_not_received,cannot access credited funds,high,delayed payout processing or missing verification,True,TCK-106883,refund_not_received,pre
+timeline_not_met,cannot receive refund,high,refund pending manual review causing delay,True,TCK-107221,refund_not_received,pre
+money_not_received,cannot see refunded money in account,high,bank transfer delay or refund processing error,False,TCK-104987,refund_not_received,pre
+timeline_not_met,cannot receive refund within promised timeframe,high,refund batch runs weekly causing processing delay,True,TCK-116045,refund_not_received,pre
+money_not_received,cannot receive expected refund,high,refund processing delay or status not displayed,True,TCK-104495,refund_not_received,pre
+money_not_received,cannot see approved refund in account,high,payment processor delay or bank transfer failure,True,TCK-108928,refund_not_received,pre
+money_not_received,cannot see received refund,high,payment processor delay causing pending refund,True,TCK-107157,refund_not_received,pre
+money_not_received,cannot receive expected refund,high,refund processing delay in payment system,True,TCK-106086,refund_not_received,pre
+money_not_received,cannot receive refund,medium,refund processing delay in finance system,True,TCK-111388,refund_not_received,pre
+money_not_received,cannot see refunded money in account,high,payment processor settlement delay,False,TCK-105434,refund_not_received,pre
+timeline_not_met,cannot get refund within promised timeframe,high,refund processing delayed by manual review batch,True,TCK-100990,refund_not_received,pre
+money_not_received,cannot access credited funds,high,delayed processing or payout system issue,True,TCK-103569,refund_not_received,pre
+money_not_received,cannot receive approved refund,high,refund processing delay or payment provider integration issue,False,TCK-101367,refund_not_received,pre
+money_not_received,cannot receive approved refund,high,refund processing delay or payment provider integration issue,False,TCK-110923,refund_not_received,pre
+money_not_received,cannot receive approved refund,high,refund processing delay or payment provider integration issue,False,TCK-116951,refund_not_received,pre
+money_not_received,cannot know when refund will be received,high,refund status not updated or delayed in backend system,True,TCK-101362,refund_not_received,pre
+timeline_not_met,cannot get refund within promised timeframe,high,manual review slows refund processing,True,TCK-113977,refund_not_received,pre
+timeline_not_met,cannot receive refund within promised timeframe,high,refund batch processing delayed beyond expected window,True,TCK-105846,refund_not_received,pre
+money_not_received,cannot receive refund for order,high,refund status not displayed or processing delayed,True,TCK-105469,refund_not_received,pre
+money_not_received,Cannot receive refund for returned order,high,Refund processing delay due to manual review,True,TCK-112829,refund_not_received,pre
+money_not_received,cannot receive expected refund,high,refund processing delay in payment system,True,TCK-110616,refund_not_received,pre
+money_not_received,cannot access expected funds,high,delayed payout processing or internal review causing hold,True,TCK-110670,refund_not_received,pre
+money_not_received,cannot access credited funds,high,delayed processing in payout system,True,TCK-108133,refund_not_received,pre
+timeline_not_met,cannot get refund within promised timeframe,high,refund batch delayed due to processing backlog,True,TCK-117545,refund_not_received,pre
+timeline_not_met,cannot receive refund,medium,refund batch processing delayed beyond expected window,True,TCK-100950,refund_not_received,pre
+money_not_received,cannot receive expected refund,high,refund processing delayed by backend batch schedule,True,TCK-102055,refund_not_received,pre
+money_not_received,cannot access credited funds,high,delayed processing in payout system,True,TCK-117195,refund_not_received,pre
+money_not_received,cannot access expected funds,high,backend payout processing delay,True,TCK-100733,refund_not_received,pre
+money_not_received,cannot receive expected refund,high,refund processing delay in payment system,True,TCK-111738,refund_not_received,pre
+money_not_received,cannot get refund for returned order,high,refund not yet processed by payment gateway,True,TCK-107177,refund_not_received,pre
+timeline_not_met,cannot receive refund within promised timeframe,high,backend refund batch processing delayed,True,TCK-107969,refund_not_received,pre
+money_not_received,cannot receive refund for returned order,medium,refund processing delay in payment system,True,TCK-113866,refund_not_received,pre
+money_not_received,cannot receive refunded money,high,delay in payment processor settlement causing refund not posted,True,TCK-105481,refund_not_received,pre
+money_not_received,cannot receive expected refund,high,refund processing delay due to payment gateway latency,True,TCK-101134,refund_not_received,pre
+money_not_received,cannot receive refund,high,Refund processing delay in finance system,True,TCK-116651,refund_not_received,pre
+money_not_received,cannot receive refund,high,refund processing delay in payment system,True,TCK-106334,refund_not_received,pre
+timeline_not_met,Cannot receive promised refund,high,Backend refund batch processing delayed beyond expected window,True,TCK-111243,refund_not_received,pre
+timeline_not_met,cannot get refund within promised timeframe,high,refund processing batch delayed due to system backlog,True,TCK-110245,refund_not_received,pre
+money_not_received,cannot know when refund will be received,high,refund status not updated in system,True,TCK-108608,refund_not_received,pre
+money_not_received,cannot receive refunded money,high,refund processing delay or integration issue,True,TCK-116735,refund_not_received,pre
+money_not_received,cannot see received refund,high,payment processor delay causing pending refund,True,TCK-110805,refund_not_received,pre
+money_not_received,cannot access funds,high,delayed payout processing due to verification backlog,True,TCK-109045,refund_not_received,pre
+money_not_received,cannot receive refund,medium,refund processing delay in payment system,True,TCK-112539,refund_not_received,pre
+no_status_visibility,cannot see refund status,medium,refund tracking UI missing or not updating,True,TCK-120743,refund_status_unclear,post
+timeline_not_met,cannot know when request will be completed,medium,system not updating estimated completion dates,True,TCK-132378,refund_status_unclear,post
+no_status_visibility,cannot see refund status,medium,refund tracking UI missing or not updating,True,TCK-125232,refund_status_unclear,post
+no_status_visibility,cannot see if request has been processed,medium,system fails to update status visible to user,True,TCK-131003,refund_status_unclear,post
+no_status_visibility,cannot determine if request was processed,medium,UI doesn't show processing status,True,TCK-134268,refund_status_unclear,post
+no_status_visibility,cannot see status updates,medium,backend not updating status field promptly,True,TCK-126034,refund_status_unclear,post
+no_status_visibility,cannot view refund status in app,medium,refund status page missing or not linked in app UI,True,TCK-124719,refund_status_unclear,post
+no_status_visibility,cannot verify refund status,medium,refund status not displayed in order details page,True,TCK-122204,refund_status_unclear,post
+no_response_from_support,cannot get refund status update,high,support tickets not being assigned or escalated promptly,True,TCK-124324,refund_status_unclear,post
+no_status_visibility,cannot see status updates,medium,backend sync issue prevents status from updating,True,TCK-123492,refund_status_unclear,post
+no_status_visibility,cannot see status updates,medium,backend sync issue prevents status from updating,True,TCK-129301,refund_status_unclear,post
+no_status_visibility,cannot see processing status,medium,status not displayed in user interface,True,TCK-122623,refund_status_unclear,post
+no_status_visibility,cannot verify refund status,medium,Refund status not displayed in order details page,True,TCK-122628,refund_status_unclear,post
+no_status_visibility,cannot see if request has been processed,medium,status updates not reflected in UI due to sync delay,True,TCK-123854,refund_status_unclear,post
+money_not_received,cannot verify refund was issued,medium,refund status not displayed in order details,True,TCK-129678,refund_status_unclear,post
+money_not_received,cannot verify refund was issued,medium,refund status not shown in order details,True,TCK-128417,refund_status_unclear,post
+no_status_visibility,cannot see updated refund status,medium,status update pipeline not syncing with UI,True,TCK-118841,refund_status_unclear,post
+no_status_visibility,cannot see any status updates,high,backend sync failure prevents status changes from being displayed,True,TCK-126640,refund_status_unclear,post
+no_status_visibility,"cannot see expected date, only pending status",medium,status updates not displayed due to UI refresh issue,True,TCK-126702,refund_status_unclear,post
+no_status_visibility,cannot view refund status,medium,Refund status UI not integrated or data not exposed,True,TCK-125337,refund_status_unclear,post
+no_status_visibility,cannot view refund status in app,high,UI lacks refund status display due to missing data integration,True,TCK-118493,refund_status_unclear,post
+money_not_received,cannot receive refunded money,high,refund processing backend delay causing status not updating,True,TCK-123559,refund_status_unclear,post
+no_status_visibility,cannot view refund status in app,high,refund status UI not implemented or data not synced,True,TCK-130462,refund_status_unclear,post
+no_status_visibility,cannot see refund status,high,refund status not exposed in user dashboard,True,TCK-122543,refund_status_unclear,post
+no_status_visibility,cannot see if request has been processed,medium,system fails to update status visible to user,True,TCK-122870,refund_status_unclear,post
+no_status_visibility,cannot see refund status,medium,Refund tracking UI does not update promptly,True,TCK-128213,refund_status_unclear,post
+no_status_visibility,cannot view refund status,medium,refund status not displayed in app UI,True,TCK-124328,refund_status_unclear,post
+no_status_visibility,cannot verify if refund was issued,medium,Refund status not displayed in order details UI,True,TCK-133100,refund_status_unclear,post
+no_status_visibility,cannot verify if refund was issued,medium,refund status not displayed in order details,True,TCK-131863,refund_status_unclear,post
+no_status_visibility,cannot see status updates,medium,status updates not reflected in UI due to sync issue,True,TCK-127219,refund_status_unclear,post
+no_status_visibility,cannot see updated refund status,medium,backend refund updates not reflected on UI,True,TCK-130251,refund_status_unclear,post
+no_status_visibility,cannot see status updates,high,backend status updates not propagating to UI,True,TCK-123059,refund_status_unclear,post
+no_status_visibility,cannot see updated refund status,medium,backend delay not reflected in UI status display,True,TCK-121904,refund_status_unclear,post
+no_status_visibility,cannot see any status updates,high,backend sync failure prevents status changes from displaying,True,TCK-126962,refund_status_unclear,post
+no_status_visibility,cannot verify refund status,medium,refund status not displayed in user interface,True,TCK-133782,refund_status_unclear,post
+no_status_visibility,cannot determine if request was processed,medium,system fails to update status visible to user,True,TCK-125917,refund_status_unclear,post
+no_status_visibility,cannot see refund status,medium,Refund tracking UI does not display current status,True,TCK-134056,refund_status_unclear,post
+timeline_not_met,cannot confirm refund completion,medium,refund status not updated due to delayed backend processing,True,TCK-123760,refund_status_unclear,post
+no_status_visibility,cannot view refund status,high,Refund status UI not integrated or data not exposed,True,TCK-133277,refund_status_unclear,post
+no_status_visibility,cannot see if request has been processed,medium,status not displayed in user interface,True,TCK-120903,refund_status_unclear,post
+no_status_visibility,cannot view refund status,medium,refund status not displayed in app UI,True,TCK-127455,refund_status_unclear,post
+timeline_not_met,cannot verify refund completion,medium,refund status not updated due to delayed backend processing,True,TCK-126296,refund_status_unclear,post
+timeline_not_met,cannot confirm refund completion,medium,refund status not updated due to delayed backend processing,True,TCK-121491,refund_status_unclear,post
+no_response_from_support,cannot get a response from support,high,support tickets not being assigned to agents promptly,True,TCK-130997,refund_status_unclear,post
+no_status_visibility,cannot see status updates,medium,backend not updating status display,True,TCK-128310,refund_status_unclear,post
+no_status_visibility,cannot view refund status,medium,refund status not displayed in app UI,True,TCK-125218,refund_status_unclear,post
+no_status_visibility,cannot track refund status,medium,Refund tracking UI lacks real-time status updates,True,TCK-129500,refund_status_unclear,post
+no_status_visibility,cannot view refund status,medium,refund status not displayed in app UI,True,TCK-127103,refund_status_unclear,post
+no_status_visibility,"cannot see expected date, only pending status",medium,status updates not displayed due to UI refresh issue,True,TCK-132115,refund_status_unclear,post
+no_status_visibility,cannot see status updates,medium,backend sync issue prevents status from updating,True,TCK-120294,refund_status_unclear,post
+no_status_visibility,cannot verify refund status,medium,refund status not displayed in order details page,True,TCK-118194,refund_status_unclear,pre
+no_status_visibility,cannot see expected status or expected completion date,medium,system lacks ETA display for pending items,True,TCK-101558,refund_status_unclear,pre
+no_status_visibility,cannot see status updates,high,backend status updates not propagating to UI,True,TCK-115605,refund_status_unclear,pre
+no_status_visibility,"cannot see expected date, only pending status",medium,status updates not reflected in UI due to sync delay,True,TCK-113738,refund_status_unclear,pre
+no_status_visibility,"cannot see expected date, only pending status",medium,status updates not displayed due to UI refresh issue,True,TCK-113876,refund_status_unclear,pre
+no_status_visibility,cannot see updated refund status,high,backend refund status not syncing to frontend UI,True,TCK-104638,refund_status_unclear,pre
+no_status_visibility,cannot see expected date for pending status,medium,status updates not displayed due to UI refresh lag,True,TCK-103291,refund_status_unclear,pre
+no_status_visibility,cannot determine if request was processed,medium,system fails to update status visible to user,True,TCK-106575,refund_status_unclear,pre
+no_status_visibility,cannot see status updates,medium,backend sync issue prevents status from updating,True,TCK-116897,refund_status_unclear,pre
+no_status_visibility,cannot see status updates,medium,backend sync issue prevents status from updating,True,TCK-106522,refund_status_unclear,pre
+no_status_visibility,cannot verify refund status,medium,refund status not displayed in order details page,True,TCK-116294,refund_status_unclear,pre
+no_status_visibility,cannot see refund status,high,refund status not exposed in user dashboard,True,TCK-114002,refund_status_unclear,pre
+no_status_visibility,cannot see updated refund status,high,backend delay prevents status from updating,True,TCK-103283,refund_status_unclear,pre
+no_status_visibility,cannot see status updates,medium,backend not updating status field promptly,True,TCK-106129,refund_status_unclear,pre
+no_status_visibility,cannot see status updates,medium,backend sync issue prevents status from updating,True,TCK-104491,refund_status_unclear,pre
+no_status_visibility,cannot determine if request was processed,medium,UI doesn't show processing status,True,TCK-113428,refund_status_unclear,pre
+no_status_visibility,cannot view refund status,medium,refund status not displayed in app UI,True,TCK-103479,refund_status_unclear,pre
+no_status_visibility,cannot verify refund status,medium,refund status not displayed in user interface,True,TCK-104881,refund_status_unclear,pre
+no_status_visibility,"cannot see expected date, only pending status",medium,status updates not reflected in UI due to sync delay,True,TCK-100671,refund_status_unclear,pre
+no_status_visibility,cannot see updated refund status,medium,backend status not propagating to UI,True,TCK-106080,refund_status_unclear,pre
+money_not_received,cannot confirm refund was issued,medium,refund status not displayed due to notification bug,True,TCK-113466,refund_status_unclear,pre
+no_status_visibility,cannot see expected date for pending status,medium,system not updating status details or UI hides date,True,TCK-100086,refund_status_unclear,pre
+no_response_from_support,cannot verify if refund was issued,high,Refund status not displayed in UI due to missing integration,True,TCK-113193,refund_status_unclear,pre
+timeline_not_met,cannot know when request will be completed,medium,system not updating estimated completion dates,True,TCK-117806,refund_status_unclear,pre
+no_status_visibility,cannot view refund status,medium,refund status not displayed in app UI,True,TCK-106691,refund_status_unclear,pre
+no_status_visibility,cannot verify if refund was issued,medium,refund status not displayed in order details,True,TCK-100281,refund_status_unclear,pre
+no_status_visibility,cannot view refund status,medium,refund status not displayed in app UI,True,TCK-101601,refund_status_unclear,pre
+no_status_visibility,cannot see updated refund status,high,backend delay prevents status from updating,True,TCK-113842,refund_status_unclear,pre
+no_status_visibility,cannot see updated refund status,high,UI not receiving backend refund status updates,True,TCK-116846,refund_status_unclear,pre
+no_status_visibility,cannot see updated refund status,medium,backend delay prevents status from updating on UI,True,TCK-115156,refund_status_unclear,pre
+no_status_visibility,cannot view refund status,medium,refund status not displayed in app UI,True,TCK-118147,refund_status_unclear,pre
+no_status_visibility,cannot verify refund status,medium,Refund status not displayed in order details page,True,TCK-116822,refund_status_unclear,pre
+no_status_visibility,cannot see expected date for pending status,medium,status updates not displayed due to UI refresh lag,True,TCK-107948,refund_status_unclear,pre
+no_response_from_support,cannot get support reply,high,support tickets not routed to agents promptly,True,TCK-112328,refund_status_unclear,pre
+no_status_visibility,Cannot see refund status,medium,Refund processing status not updating due to delayed backend sync,True,TCK-111331,refund_status_unclear,pre
+no_status_visibility,cannot determine if request was processed,medium,status not displayed in user dashboard,True,TCK-104309,refund_status_unclear,pre
+money_not_received,cannot verify refund was issued,medium,refund status not shown in order details,True,TCK-106350,refund_status_unclear,pre
+no_status_visibility,cannot see status updates,medium,backend delay prevents status from updating,True,TCK-107143,refund_status_unclear,pre
+no_status_visibility,cannot see status updates,high,backend not updating status in real-time,True,TCK-102576,refund_status_unclear,pre
+no_status_visibility,cannot see status updates,high,backend sync issue prevents status from updating,True,TCK-114864,refund_status_unclear,pre
+no_status_visibility,cannot see status updates,high,backend status updates not propagating to UI,True,TCK-112392,refund_status_unclear,pre
+money_not_received,cannot verify refund was issued,medium,refund status not displayed in UI,True,TCK-116203,refund_status_unclear,pre
+no_status_visibility,cannot determine if request was processed,medium,system fails to update processing status visible to users,True,TCK-100857,refund_status_unclear,pre
+no_status_visibility,cannot view refund status,medium,refund status not displayed in app UI,True,TCK-100598,refund_status_unclear,pre
+no_status_visibility,cannot see updated refund status,medium,refund status update job delayed,True,TCK-118213,refund_status_unclear,pre
+no_status_visibility,cannot verify refund status,medium,refund status not displayed in order details page,True,TCK-104789,refund_status_unclear,pre
+no_status_visibility,cannot see refund status,medium,backend delay prevents status update on refund page,True,TCK-111581,refund_status_unclear,pre
+no_status_visibility,cannot see updated refund status,medium,backend delay prevents status from updating on UI,True,TCK-111773,refund_status_unclear,pre
+no_status_visibility,cannot see status updates,medium,backend not updating status visibility,True,TCK-116998,refund_status_unclear,pre
+no_status_visibility,cannot track refund status,medium,Refund tracking UI lacks real-time status updates,True,TCK-108816,refund_status_unclear,pre
